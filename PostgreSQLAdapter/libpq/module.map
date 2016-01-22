@@ -1,0 +1,4 @@
+module libpq [system] {
+    header "/usr/local/Cellar/postgresql/9.4.4/include/libpq-fe.h"
+    export *
+}

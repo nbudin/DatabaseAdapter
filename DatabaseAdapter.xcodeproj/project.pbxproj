@@ -7,9 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660AF1211C492B8B009A52DB /* StringArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AF1201C492B8B009A52DB /* StringArrayUtils.swift */; };
+		660AF1231C492E84009A52DB /* SequenceType+compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AF1221C492E84009A52DB /* SequenceType+compact.swift */; };
+		664A0A781C42B1A500398EE6 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A0A771C42B1A500398EE6 /* ResultRow.swift */; };
 		66C3ECB71C4158BC0023D885 /* DatabaseAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C3ECB61C4158BC0023D885 /* DatabaseAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C3ECBE1C4158BC0023D885 /* DatabaseAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */; };
 		66C3ECC31C4158BC0023D885 /* DatabaseAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECC21C4158BC0023D885 /* DatabaseAdapterTests.swift */; };
+		66C3ECCE1C4159080023D885 /* DatabaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECCD1C4159080023D885 /* DatabaseAdapter.swift */; };
+		66C3ECD01C4159330023D885 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECCF1C4159330023D885 /* Table.swift */; };
+		66C3ECD21C4159470023D885 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECD11C4159470023D885 /* Column.swift */; };
+		66C3ECDE1C415A260023D885 /* PostgreSQLAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C3ECDD1C415A260023D885 /* PostgreSQLAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66C3ECE51C415A260023D885 /* PostgreSQLAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECDB1C415A260023D885 /* PostgreSQLAdapter.framework */; };
+		66C3ECEA1C415A260023D885 /* PostgreSQLAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECE91C415A260023D885 /* PostgreSQLAdapterTests.swift */; };
+		66C3ECF21C415A2A0023D885 /* PostgreSQLAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECD41C4159FD0023D885 /* PostgreSQLAdapter.swift */; };
+		66C3ECF51C415A850023D885 /* PostgreSQLColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECF41C415A850023D885 /* PostgreSQLColumn.swift */; };
+		66C3ECF61C415AC70023D885 /* DatabaseAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */; };
+		66C3ECF81C415B160023D885 /* libpq.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECF71C415B160023D885 /* libpq.tbd */; };
+		66C3ECFD1C42A66A0023D885 /* ResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECFC1C42A66A0023D885 /* ResultSet.swift */; };
+		66C3ECFF1C42A6C80023D885 /* PostgreSQLResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ECFE1C42A6C80023D885 /* PostgreSQLResultSet.swift */; };
+		66CEDF851C45519C0024C85F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CEDF841C45519C0024C85F /* main.swift */; };
+		66CEDF8A1C4551E70024C85F /* PostgreSQLAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECDB1C415A260023D885 /* PostgreSQLAdapter.framework */; };
+		66CEDF8B1C45521C0024C85F /* DatabaseAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */; };
+		66CEDF8C1C4552430024C85F /* DatabaseAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,15 +39,54 @@
 			remoteGlobalIDString = 66C3ECB21C4158BC0023D885;
 			remoteInfo = DatabaseAdapter;
 		};
+		66C3ECE61C415A260023D885 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66C3ECAA1C4158BC0023D885 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66C3ECDA1C415A260023D885;
+			remoteInfo = PostgreSQLAdapter;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		66CEDF801C45519C0024C85F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		660AF1201C492B8B009A52DB /* StringArrayUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArrayUtils.swift; sourceTree = "<group>"; };
+		660AF1221C492E84009A52DB /* SequenceType+compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+compact.swift"; sourceTree = "<group>"; };
+		664A0A771C42B1A500398EE6 /* ResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
 		66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DatabaseAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C3ECB61C4158BC0023D885 /* DatabaseAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseAdapter.h; sourceTree = "<group>"; };
 		66C3ECB81C4158BC0023D885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66C3ECBD1C4158BC0023D885 /* DatabaseAdapterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatabaseAdapterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C3ECC21C4158BC0023D885 /* DatabaseAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAdapterTests.swift; sourceTree = "<group>"; };
 		66C3ECC41C4158BC0023D885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66C3ECCD1C4159080023D885 /* DatabaseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAdapter.swift; sourceTree = "<group>"; };
+		66C3ECCF1C4159330023D885 /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		66C3ECD11C4159470023D885 /* Column.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
+		66C3ECD41C4159FD0023D885 /* PostgreSQLAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLAdapter.swift; sourceTree = "<group>"; };
+		66C3ECDB1C415A260023D885 /* PostgreSQLAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PostgreSQLAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66C3ECDD1C415A260023D885 /* PostgreSQLAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostgreSQLAdapter.h; sourceTree = "<group>"; };
+		66C3ECDF1C415A260023D885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66C3ECE41C415A260023D885 /* PostgreSQLAdapterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostgreSQLAdapterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66C3ECE91C415A260023D885 /* PostgreSQLAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgreSQLAdapterTests.swift; sourceTree = "<group>"; };
+		66C3ECEB1C415A260023D885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66C3ECF41C415A850023D885 /* PostgreSQLColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLColumn.swift; sourceTree = "<group>"; };
+		66C3ECF71C415B160023D885 /* libpq.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpq.tbd; path = usr/lib/libpq.tbd; sourceTree = SDKROOT; };
+		66C3ECFB1C415C760023D885 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.map; path = libpq/module.map; sourceTree = "<group>"; };
+		66C3ECFC1C42A66A0023D885 /* ResultSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSet.swift; sourceTree = "<group>"; };
+		66C3ECFE1C42A6C80023D885 /* PostgreSQLResultSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLResultSet.swift; sourceTree = "<group>"; };
+		66CEDF821C45519C0024C85F /* DatabaseAdapterTestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DatabaseAdapterTestApp; sourceTree = BUILT_PRODUCTS_DIR; };
+		66CEDF841C45519C0024C85F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,14 +105,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		66C3ECD71C415A260023D885 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66C3ECF81C415B160023D885 /* libpq.tbd in Frameworks */,
+				66C3ECF61C415AC70023D885 /* DatabaseAdapter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66C3ECE11C415A260023D885 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66CEDF8C1C4552430024C85F /* DatabaseAdapter.framework in Frameworks */,
+				66C3ECE51C415A260023D885 /* PostgreSQLAdapter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66CEDF7F1C45519C0024C85F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66CEDF8B1C45521C0024C85F /* DatabaseAdapter.framework in Frameworks */,
+				66CEDF8A1C4551E70024C85F /* PostgreSQLAdapter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		66C3ECA91C4158BC0023D885 = {
 			isa = PBXGroup;
 			children = (
+				66C3ECF71C415B160023D885 /* libpq.tbd */,
 				66C3ECB51C4158BC0023D885 /* DatabaseAdapter */,
 				66C3ECC11C4158BC0023D885 /* DatabaseAdapterTests */,
+				66C3ECDC1C415A260023D885 /* PostgreSQLAdapter */,
+				66C3ECE81C415A260023D885 /* PostgreSQLAdapterTests */,
+				66CEDF831C45519C0024C85F /* DatabaseAdapterTestApp */,
 				66C3ECB41C4158BC0023D885 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +153,9 @@
 			children = (
 				66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */,
 				66C3ECBD1C4158BC0023D885 /* DatabaseAdapterTests.xctest */,
+				66C3ECDB1C415A260023D885 /* PostgreSQLAdapter.framework */,
+				66C3ECE41C415A260023D885 /* PostgreSQLAdapterTests.xctest */,
+				66CEDF821C45519C0024C85F /* DatabaseAdapterTestApp */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +165,11 @@
 			children = (
 				66C3ECB61C4158BC0023D885 /* DatabaseAdapter.h */,
 				66C3ECB81C4158BC0023D885 /* Info.plist */,
+				66C3ECCD1C4159080023D885 /* DatabaseAdapter.swift */,
+				66C3ECCF1C4159330023D885 /* Table.swift */,
+				66C3ECD11C4159470023D885 /* Column.swift */,
+				66C3ECFC1C42A66A0023D885 /* ResultSet.swift */,
+				664A0A771C42B1A500398EE6 /* ResultRow.swift */,
 			);
 			path = DatabaseAdapter;
 			sourceTree = "<group>";
@@ -86,6 +183,38 @@
 			path = DatabaseAdapterTests;
 			sourceTree = "<group>";
 		};
+		66C3ECDC1C415A260023D885 /* PostgreSQLAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				66C3ECD41C4159FD0023D885 /* PostgreSQLAdapter.swift */,
+				66C3ECDD1C415A260023D885 /* PostgreSQLAdapter.h */,
+				66C3ECDF1C415A260023D885 /* Info.plist */,
+				66C3ECF41C415A850023D885 /* PostgreSQLColumn.swift */,
+				66C3ECFB1C415C760023D885 /* module.map */,
+				66C3ECFE1C42A6C80023D885 /* PostgreSQLResultSet.swift */,
+				660AF1201C492B8B009A52DB /* StringArrayUtils.swift */,
+				660AF1221C492E84009A52DB /* SequenceType+compact.swift */,
+			);
+			path = PostgreSQLAdapter;
+			sourceTree = "<group>";
+		};
+		66C3ECE81C415A260023D885 /* PostgreSQLAdapterTests */ = {
+			isa = PBXGroup;
+			children = (
+				66C3ECE91C415A260023D885 /* PostgreSQLAdapterTests.swift */,
+				66C3ECEB1C415A260023D885 /* Info.plist */,
+			);
+			path = PostgreSQLAdapterTests;
+			sourceTree = "<group>";
+		};
+		66CEDF831C45519C0024C85F /* DatabaseAdapterTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				66CEDF841C45519C0024C85F /* main.swift */,
+			);
+			path = DatabaseAdapterTestApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,7 +222,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C3ECDE1C415A260023D885 /* PostgreSQLAdapter.h in Headers */,
 				66C3ECB71C4158BC0023D885 /* DatabaseAdapter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66C3ECD81C415A260023D885 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +273,59 @@
 			productReference = 66C3ECBD1C4158BC0023D885 /* DatabaseAdapterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		66C3ECDA1C415A260023D885 /* PostgreSQLAdapter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66C3ECEC1C415A260023D885 /* Build configuration list for PBXNativeTarget "PostgreSQLAdapter" */;
+			buildPhases = (
+				66C3ECD61C415A260023D885 /* Sources */,
+				66C3ECD71C415A260023D885 /* Frameworks */,
+				66C3ECD81C415A260023D885 /* Headers */,
+				66C3ECD91C415A260023D885 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PostgreSQLAdapter;
+			productName = PostgreSQLAdapter;
+			productReference = 66C3ECDB1C415A260023D885 /* PostgreSQLAdapter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		66C3ECE31C415A260023D885 /* PostgreSQLAdapterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66C3ECEF1C415A260023D885 /* Build configuration list for PBXNativeTarget "PostgreSQLAdapterTests" */;
+			buildPhases = (
+				66C3ECE01C415A260023D885 /* Sources */,
+				66C3ECE11C415A260023D885 /* Frameworks */,
+				66C3ECE21C415A260023D885 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66C3ECE71C415A260023D885 /* PBXTargetDependency */,
+			);
+			name = PostgreSQLAdapterTests;
+			productName = PostgreSQLAdapterTests;
+			productReference = 66C3ECE41C415A260023D885 /* PostgreSQLAdapterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		66CEDF811C45519C0024C85F /* DatabaseAdapterTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66CEDF861C45519C0024C85F /* Build configuration list for PBXNativeTarget "DatabaseAdapterTestApp" */;
+			buildPhases = (
+				66CEDF7E1C45519C0024C85F /* Sources */,
+				66CEDF7F1C45519C0024C85F /* Frameworks */,
+				66CEDF801C45519C0024C85F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DatabaseAdapterTestApp;
+			productName = DatabaseAdapterTestApp;
+			productReference = 66CEDF821C45519C0024C85F /* DatabaseAdapterTestApp */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +340,15 @@
 						CreatedOnToolsVersion = 7.2;
 					};
 					66C3ECBC1C4158BC0023D885 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					66C3ECDA1C415A260023D885 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					66C3ECE31C415A260023D885 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					66CEDF811C45519C0024C85F = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -168,6 +367,9 @@
 			targets = (
 				66C3ECB21C4158BC0023D885 /* DatabaseAdapter */,
 				66C3ECBC1C4158BC0023D885 /* DatabaseAdapterTests */,
+				66C3ECDA1C415A260023D885 /* PostgreSQLAdapter */,
+				66C3ECE31C415A260023D885 /* PostgreSQLAdapterTests */,
+				66CEDF811C45519C0024C85F /* DatabaseAdapterTestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +389,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		66C3ECD91C415A260023D885 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66C3ECE21C415A260023D885 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,6 +410,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664A0A781C42B1A500398EE6 /* ResultRow.swift in Sources */,
+				66C3ECD01C4159330023D885 /* Table.swift in Sources */,
+				66C3ECFD1C42A66A0023D885 /* ResultSet.swift in Sources */,
+				66C3ECCE1C4159080023D885 /* DatabaseAdapter.swift in Sources */,
+				66C3ECD21C4159470023D885 /* Column.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +426,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		66C3ECD61C415A260023D885 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660AF1211C492B8B009A52DB /* StringArrayUtils.swift in Sources */,
+				66C3ECF21C415A2A0023D885 /* PostgreSQLAdapter.swift in Sources */,
+				66C3ECFF1C42A6C80023D885 /* PostgreSQLResultSet.swift in Sources */,
+				66C3ECF51C415A850023D885 /* PostgreSQLColumn.swift in Sources */,
+				660AF1231C492E84009A52DB /* SequenceType+compact.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66C3ECE01C415A260023D885 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66C3ECEA1C415A260023D885 /* PostgreSQLAdapterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66CEDF7E1C45519C0024C85F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66CEDF851C45519C0024C85F /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -212,6 +461,11 @@
 			isa = PBXTargetDependency;
 			target = 66C3ECB21C4158BC0023D885 /* DatabaseAdapter */;
 			targetProxy = 66C3ECBF1C4158BC0023D885 /* PBXContainerItemProxy */;
+		};
+		66C3ECE71C415A260023D885 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66C3ECDA1C415A260023D885 /* PostgreSQLAdapter */;
+			targetProxy = 66C3ECE61C415A260023D885 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -305,33 +559,40 @@
 		66C3ECC81C4158BC0023D885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = DatabaseAdapter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.natbudin.DatabaseAdapter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		66C3ECC91C4158BC0023D885 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = DatabaseAdapter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.natbudin.DatabaseAdapter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -360,6 +621,88 @@
 			};
 			name = Release;
 		};
+		66C3ECED1C415A260023D885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.4.4/include/server;
+				INFOPLIST_FILE = PostgreSQLAdapter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natbudin.PostgreSQLAdapter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/PostgreSQLAdapter/libpq";
+			};
+			name = Debug;
+		};
+		66C3ECEE1C415A260023D885 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.4.4/include/server;
+				INFOPLIST_FILE = PostgreSQLAdapter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natbudin.PostgreSQLAdapter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/PostgreSQLAdapter/libpq";
+			};
+			name = Release;
+		};
+		66C3ECF01C415A260023D885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PostgreSQLAdapterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natbudin.PostgreSQLAdapterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66C3ECF11C415A260023D885 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PostgreSQLAdapterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natbudin.PostgreSQLAdapterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		66CEDF871C45519C0024C85F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66CEDF881C45519C0024C85F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -379,6 +722,7 @@
 				66C3ECC91C4158BC0023D885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66C3ECCA1C4158BC0023D885 /* Build configuration list for PBXNativeTarget "DatabaseAdapterTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +731,34 @@
 				66C3ECCC1C4158BC0023D885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66C3ECEC1C415A260023D885 /* Build configuration list for PBXNativeTarget "PostgreSQLAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66C3ECED1C415A260023D885 /* Debug */,
+				66C3ECEE1C415A260023D885 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66C3ECEF1C415A260023D885 /* Build configuration list for PBXNativeTarget "PostgreSQLAdapterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66C3ECF01C415A260023D885 /* Debug */,
+				66C3ECF11C415A260023D885 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66CEDF861C45519C0024C85F /* Build configuration list for PBXNativeTarget "DatabaseAdapterTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66CEDF871C45519C0024C85F /* Debug */,
+				66CEDF881C45519C0024C85F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
