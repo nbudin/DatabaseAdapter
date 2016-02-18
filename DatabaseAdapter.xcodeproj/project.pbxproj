@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		660AF1211C492B8B009A52DB /* StringArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AF1201C492B8B009A52DB /* StringArrayUtils.swift */; };
 		660AF1231C492E84009A52DB /* SequenceType+compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AF1221C492E84009A52DB /* SequenceType+compact.swift */; };
+		66294A131C54357C0097A9F8 /* PostgreSQLCastable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66294A121C54357C0097A9F8 /* PostgreSQLCastable.swift */; };
+		66294A181C543E970097A9F8 /* PostgreSQLTypeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66294A171C543E970097A9F8 /* PostgreSQLTypeMap.swift */; };
+		66294A1A1C56704F0097A9F8 /* PostgreSQLBuiltinTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66294A191C56704F0097A9F8 /* PostgreSQLBuiltinTypes.swift */; };
+		6632FAF81C75217400301E5C /* PostgreSQLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632FAF71C75217400301E5C /* PostgreSQLType.swift */; };
+		6632FAFA1C75499F00301E5C /* PostgreSQLArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632FAF91C75499F00301E5C /* PostgreSQLArray.swift */; };
 		664A0A781C42B1A500398EE6 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A0A771C42B1A500398EE6 /* ResultRow.swift */; };
 		66C3ECB71C4158BC0023D885 /* DatabaseAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C3ECB61C4158BC0023D885 /* DatabaseAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C3ECBE1C4158BC0023D885 /* DatabaseAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */; };
@@ -63,6 +68,11 @@
 /* Begin PBXFileReference section */
 		660AF1201C492B8B009A52DB /* StringArrayUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArrayUtils.swift; sourceTree = "<group>"; };
 		660AF1221C492E84009A52DB /* SequenceType+compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+compact.swift"; sourceTree = "<group>"; };
+		66294A121C54357C0097A9F8 /* PostgreSQLCastable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLCastable.swift; sourceTree = "<group>"; };
+		66294A171C543E970097A9F8 /* PostgreSQLTypeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLTypeMap.swift; sourceTree = "<group>"; };
+		66294A191C56704F0097A9F8 /* PostgreSQLBuiltinTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLBuiltinTypes.swift; sourceTree = "<group>"; };
+		6632FAF71C75217400301E5C /* PostgreSQLType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLType.swift; sourceTree = "<group>"; };
+		6632FAF91C75499F00301E5C /* PostgreSQLArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLArray.swift; sourceTree = "<group>"; };
 		664A0A771C42B1A500398EE6 /* ResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
 		66C3ECB31C4158BC0023D885 /* DatabaseAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DatabaseAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C3ECB61C4158BC0023D885 /* DatabaseAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseAdapter.h; sourceTree = "<group>"; };
@@ -194,6 +204,11 @@
 				66C3ECFE1C42A6C80023D885 /* PostgreSQLResultSet.swift */,
 				660AF1201C492B8B009A52DB /* StringArrayUtils.swift */,
 				660AF1221C492E84009A52DB /* SequenceType+compact.swift */,
+				66294A121C54357C0097A9F8 /* PostgreSQLCastable.swift */,
+				66294A171C543E970097A9F8 /* PostgreSQLTypeMap.swift */,
+				66294A191C56704F0097A9F8 /* PostgreSQLBuiltinTypes.swift */,
+				6632FAF71C75217400301E5C /* PostgreSQLType.swift */,
+				6632FAF91C75499F00301E5C /* PostgreSQLArray.swift */,
 			);
 			path = PostgreSQLAdapter;
 			sourceTree = "<group>";
@@ -431,9 +446,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				660AF1211C492B8B009A52DB /* StringArrayUtils.swift in Sources */,
+				66294A1A1C56704F0097A9F8 /* PostgreSQLBuiltinTypes.swift in Sources */,
 				66C3ECF21C415A2A0023D885 /* PostgreSQLAdapter.swift in Sources */,
+				6632FAFA1C75499F00301E5C /* PostgreSQLArray.swift in Sources */,
 				66C3ECFF1C42A6C80023D885 /* PostgreSQLResultSet.swift in Sources */,
+				66294A131C54357C0097A9F8 /* PostgreSQLCastable.swift in Sources */,
 				66C3ECF51C415A850023D885 /* PostgreSQLColumn.swift in Sources */,
+				6632FAF81C75217400301E5C /* PostgreSQLType.swift in Sources */,
+				66294A181C543E970097A9F8 /* PostgreSQLTypeMap.swift in Sources */,
 				660AF1231C492E84009A52DB /* SequenceType+compact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

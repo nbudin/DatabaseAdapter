@@ -45,6 +45,7 @@ public class PostgreSQLAdapter: DatabaseAdapter {
     
     let connectionParameters: ConnectionParameters
     let pgConn: PostgresConnection
+    let typeMap: PostgreSQLTypeMap
     
     public init(paramsDict: [String : String]) throws {
         let paramsDictKeys = Array(paramsDict.keys)
@@ -52,6 +53,8 @@ public class PostgreSQLAdapter: DatabaseAdapter {
             paramsDict[key]!
         })
         
+        self.typeMap = PostgreSQLTypeMap()
+
         pgConn = try! paramsDictKeys.withCStringArray({ keywords in
             return try! paramsDictValues.withCStringArray({ values in
                 return PQconnectdbParams(keywords, values, 0)
@@ -73,6 +76,9 @@ public class PostgreSQLAdapter: DatabaseAdapter {
             
             throw Error.ConnectionError(errorMessage)
         }
+        
+        typeMap.adapter = self
+        try typeMap.registerTypes(PostgreSQLBuiltinTypes)
     }
     
     deinit {

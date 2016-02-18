@@ -15,6 +15,7 @@ public class PostgreSQLResultSet: ResultSet {
     let pgRes: COpaquePointer?
     let singleRowMode: Bool
     var error: ErrorType?
+    var castValues = true
     
     init(adapter: PostgreSQLAdapter) {
         self.adapter = adapter
@@ -56,6 +57,18 @@ public class PostgreSQLResultSet: ResultSet {
         return getColumnNames(pgRes)
     }
     
+    public var columnTypes: [PostgreSQLType] {
+        guard let pgRes = self.pgRes else {
+            return []
+        }
+        
+        return getColumnTypes(pgRes)
+    }
+    
+    public func skipCastingValues() {
+        castValues = false
+    }
+    
     private func getColumnNames(result: PostgresResult) -> [String] {
         let fieldCount = PQnfields(result)
         return (0..<fieldCount).map({ i in
@@ -67,18 +80,50 @@ public class PostgreSQLResultSet: ResultSet {
         })
     }
     
-    private func castColumnValue(result: PostgresResult, rowIndex: Int32, columnIndex: Int32) -> AnyObject? {
+    private func getColumnTypes(result: PostgresResult) -> [PostgreSQLType] {
+        let fieldCount = PQnfields(result)
+        return (0..<fieldCount).map({ i in
+            if self.castValues {
+                let OID = PQftype(result, i)
+                guard let type = adapter.typeMap.typeForOID(OID, queryIfNotFound: !self.singleRowMode) else {
+                    guard let arrayElementType = adapter.typeMap.arrayElementTypeForOID(OID) else {
+                        return PostgreSQLScalarType(destinationType: String.self)
+                    }
+                    
+                    return PostgreSQLArrayType(elementType: arrayElementType)
+                }
+                
+                return PostgreSQLScalarType(destinationType: type)
+            } else {
+                return PostgreSQLScalarType(destinationType: String.self)
+            }
+        })
+    }
+    
+    private func castColumnValue(result: PostgresResult, columnType: PostgreSQLType, rowIndex: Int32, columnIndex: Int32) -> AnyObject? {
         if PQgetisnull(result, rowIndex, columnIndex) == 0 {
-            return String(CString: PQgetvalue(result, rowIndex, columnIndex), encoding: NSUTF8StringEncoding)
+            guard let stringValue = String(CString: PQgetvalue(result, rowIndex, columnIndex), encoding: NSUTF8StringEncoding) else {
+                return nil
+            }
+            
+            switch (columnType) {
+            case is PostgreSQLScalarType:
+                return (columnType as! PostgreSQLScalarType).castFromPostgreSQLString(stringValue) as? AnyObject
+            case is PostgreSQLArrayType:
+                return (columnType as! PostgreSQLArrayType).castFromPostgreSQLString(stringValue)
+            default:
+                return nil
+            }
         } else {
             return nil
         }
     }
     
-    private func buildResultRow(columnNames: [String], result: PostgresResult, rowIndex: Int32) -> ResultRow {
+    private func buildResultRow(columnNames: [String], columnTypes: [PostgreSQLType], result: PostgresResult, rowIndex: Int32) -> ResultRow {
         var columnValues: [AnyObject?] = []
         for i: Int32 in Int32(0)..<Int32(columnNames.count) {
-            columnValues.append(self.castColumnValue(result, rowIndex: rowIndex, columnIndex: i))
+            let castable = self.castColumnValue(result, columnType: columnTypes[Int(i)], rowIndex: rowIndex, columnIndex: i)
+            columnValues.append(castable)
         }
         
         return ResultRow(columnNames: columnNames, columnValues: columnValues)
@@ -94,13 +139,14 @@ public class PostgreSQLResultSet: ResultSet {
         var rowIndex = Int32(0)
         let rowCount = Int32(self.rowCount)
         let columnNames = self.columnNames
+        let columnTypes = self.columnTypes
         
         return anyGenerator({ () -> ResultRow? in
             if rowIndex >= rowCount {
                 return nil
             }
             
-            let resultRow = self.buildResultRow(columnNames, result: pgRes, rowIndex: rowIndex)
+            let resultRow = self.buildResultRow(columnNames, columnTypes: columnTypes, result: pgRes, rowIndex: rowIndex)
             rowIndex += 1
             return resultRow
         })
@@ -128,7 +174,7 @@ public class PostgreSQLResultSet: ResultSet {
                         
                         return nil
                     } else {
-                        return self.buildResultRow(self.getColumnNames(result), result: result, rowIndex: 0)
+                        return self.buildResultRow(self.getColumnNames(result), columnTypes: self.getColumnTypes(result), result: result, rowIndex: 0)
                     }
                 })
             } catch {

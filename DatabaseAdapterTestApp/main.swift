@@ -17,7 +17,7 @@ let adapter = try PostgreSQLAdapter(paramsDict: [
 
 print("Tables: \(adapter.tableNames)")
 
-let resultSet = try adapter.select("select * from pg_user")
+let resultSet = try adapter.select("select id, hidden_user_ids from user_preferences where hidden_user_ids != '{}'::integer[] limit 1")
 print("\(resultSet.rowCount) rows")
 print("Columns: \(resultSet.columnNames)")
 
@@ -26,7 +26,12 @@ for row in resultSet.rows() {
     for columnName in row.columnNames {
         let description: String
         if let value = row[columnName] {
-            description = value.description
+            switch (value) {
+            case is PostgreSQLArray:
+                description = (value as! PostgreSQLArray).castToPostgreSQLString()
+            default:
+                description = value.description
+            }
         } else {
             description = "nil"
         }
