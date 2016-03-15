@@ -9,7 +9,6 @@
 import Foundation
 
 public protocol ResultSet {
-    var rowCount: Int { get }
     var columnNames: [String] { get }
     
     func rows() -> AnyGenerator<ResultRow>

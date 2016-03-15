@@ -120,7 +120,7 @@ public class PostgreSQLResultSet: ResultSet {
     }
     
     private func buildResultRow(columnNames: [String], columnTypes: [PostgreSQLType], result: PostgresResult, rowIndex: Int32) -> ResultRow {
-        var columnValues: [AnyObject?] = []
+        var columnValues: [Any?] = []
         for i: Int32 in Int32(0)..<Int32(columnNames.count) {
             let castable = self.castColumnValue(result, columnType: columnTypes[Int(i)], rowIndex: rowIndex, columnIndex: i)
             columnValues.append(castable)

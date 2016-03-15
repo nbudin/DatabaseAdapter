@@ -10,10 +10,10 @@ import Foundation
 
 public struct ResultRow: SequenceType {
     public let columnNames: [String]
-    let rowValues: [String : AnyObject?]
+    let rowValues: [String : Any?]
     
-    public init(columnNames: [String], columnValues: [AnyObject?]) {
-        var rowValues = [String : AnyObject?]()
+    public init(columnNames: [String], columnValues: [Any?]) {
+        var rowValues = [String : Any?]()
         
         for i in 0..<columnNames.count {
             rowValues[columnNames[i]] = columnValues[i]
@@ -23,7 +23,7 @@ public struct ResultRow: SequenceType {
         self.rowValues = rowValues
     }
     
-    public subscript(columnName: String) -> AnyObject? {
+    public subscript(columnName: String) -> Any? {
         guard let value = rowValues[columnName] else {
             return nil
         }
@@ -31,11 +31,11 @@ public struct ResultRow: SequenceType {
         return value
     }
     
-    public subscript(columnIndex: Int) -> AnyObject? {
+    public subscript(columnIndex: Int) -> Any? {
         return self[columnNames[columnIndex]]
     }
     
-    public func generate() -> AnyGenerator<AnyObject?> {
+    public func generate() -> AnyGenerator<Any?> {
         var columnNameGenerator = columnNames.generate()
         
         return anyGenerator({
